@@ -1,67 +1,59 @@
-grammar Language;		
+grammar Language;
 file: functionDeclaration* ;
 
-functionDeclaration: funcHead arguments body;
+functionDeclaration: funcHead parameters body;
 funcHead: 'func' name ;
-arguments: '(' argumentlist? ')' ;
-argumentlist: argument (',' argument)* ;
-argument: name ;
+parameters: '(' parameterList? ')' ;
+parameterList: parameter (',' parameter)* ;
+parameter: name ;
 
 body: 'begin' statements 'end';
 statements: statement* ;
 
 statement: conditional #conditionalStatement
-	| variableAssignment #varAssignStatement
-	| variableDeclaration #varDeclStatement
-	| funcCall #funcCallStatement
-	| expr #exprStatement
-	| returnStatement #retStatement
-	| empty #emptyStatement
+	| variableAssignment ';' #varAssignStatement
+	| variableDeclaration ';' #varDeclStatement
+	| expr ';' #exprStatement
+	| returnStatement ';' #retStatement
+	| ';' #emptyStatement
 	;
 
 conditional: ifStatement elseStatement? ;
 
-ifStatement: 'if' conditionStatement 'then begin' statement* end;
-conditionStatement: value conditionalOperator value 
-	| value
-	;
-value: name #nameConditionVal
-	| funcCall #funcCallConditionVal
-	| intvalue #intValConditionVal
-	;
-conditionalOperator: '<=' #lessThanOrEqual
-	| '<' #lessThan
-	| '>=' #greaterThanOrEqual
-	| '>' #greaterThan
-	| '==' #equal
-	| '!=' #notEqual
-	;
-elseStatement: 'else begin' returnStatement end;
-returnStatement: 'return' value ';' ;
+ifStatement: 'if' expr 'then begin' statement* end;
+elseStatement: 'else begin' statement* end ;
+returnStatement: 'return' expr ';' ;
 end: 'end' ;
 
-funcCall: name funcArguments ;
+funcCall: name arguments ;
+arguments: '(' parameterList? ')' ;
+argumentList: expr (',' expr)* ;
 
-funcArguments: ('(' funcCall ')')
-	| arguments
+variableDeclaration: 'var' name ';' 
+	| 'var' name assignment ';'
 	;
+variableAssignment: name assignment ';' ;
+assignment: '<-' expr ;
 
-variableDeclaration: 'var' name ';' ;
-variableAssignment: name '<-' expr ';' ;
-
-expr:	expr ('*') expr # multiplicationExpr
-    |	expr ('/') expr # divisionExpr
-    |	expr ('+') expr # additionExpr
-    |	expr ('-') expr # subtractionExpr
-	|	expr ('and') expr # andExpr
-	|	expr ('or') expr # orExpr
-	|	expr ('^') expr # notExpr
+expr:	expr '*' expr # multiplicationExpr
+    |	expr '/' expr # divisionExpr
+    |	expr '+' expr # additionExpr
+    |	expr '-' expr # subtractionExpr
+	| 	expr '<=' expr #lessThanOrEqualExpr
+	| 	expr '<' expr #lessThanExpr
+	| 	expr '>=' expr #greaterThanOrEqualExpr
+	| 	expr '>' expr #greaterThanExpr
+	| 	expr '==' expr #equalExpr
+	| 	expr '!=' expr #notEqualExpr
+	|	expr 'and' expr # andExpr
+	|	expr 'or' expr # orExpr
+	|	expr '^' expr # notExpr
+	|	'(' expr ')' # parenthesisExpr
+	|	funcCall # funcCallExpr
     |	intvalue # intValueExper
 	|	name # nameExpr
-    |	'(' expr ')' # parenthesisExpr
     ;
 
-empty: EMPTY ;
 name: WORD ;
 intvalue: NOT? NEGATIVE? INT
 	| NEGATIVE? NOT? INT
@@ -69,7 +61,6 @@ intvalue: NOT? NEGATIVE? INT
 
 // lexer
 WORD 				: [a-zA-Z0-9]+			;
-EMPTY				: ';'					;
 NEGATIVE			: '-'					;
 NOT					: 'not'					;
 INT					: [0-9]+ 				;

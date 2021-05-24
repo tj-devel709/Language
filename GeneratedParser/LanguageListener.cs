@@ -61,35 +61,35 @@ public interface ILanguageListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitFuncHead([NotNull] LanguageParser.FuncHeadContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="LanguageParser.arguments"/>.
+	/// Enter a parse tree produced by <see cref="LanguageParser.parameters"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterArguments([NotNull] LanguageParser.ArgumentsContext context);
+	void EnterParameters([NotNull] LanguageParser.ParametersContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="LanguageParser.arguments"/>.
+	/// Exit a parse tree produced by <see cref="LanguageParser.parameters"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitArguments([NotNull] LanguageParser.ArgumentsContext context);
+	void ExitParameters([NotNull] LanguageParser.ParametersContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="LanguageParser.argumentlist"/>.
+	/// Enter a parse tree produced by <see cref="LanguageParser.parameterList"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterArgumentlist([NotNull] LanguageParser.ArgumentlistContext context);
+	void EnterParameterList([NotNull] LanguageParser.ParameterListContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="LanguageParser.argumentlist"/>.
+	/// Exit a parse tree produced by <see cref="LanguageParser.parameterList"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitArgumentlist([NotNull] LanguageParser.ArgumentlistContext context);
+	void ExitParameterList([NotNull] LanguageParser.ParameterListContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="LanguageParser.argument"/>.
+	/// Enter a parse tree produced by <see cref="LanguageParser.parameter"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterArgument([NotNull] LanguageParser.ArgumentContext context);
+	void EnterParameter([NotNull] LanguageParser.ParameterContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="LanguageParser.argument"/>.
+	/// Exit a parse tree produced by <see cref="LanguageParser.parameter"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitArgument([NotNull] LanguageParser.ArgumentContext context);
+	void ExitParameter([NotNull] LanguageParser.ParameterContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="LanguageParser.body"/>.
 	/// </summary>
@@ -147,18 +147,6 @@ public interface ILanguageListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitVarDeclStatement([NotNull] LanguageParser.VarDeclStatementContext context);
 	/// <summary>
-	/// Enter a parse tree produced by the <c>funcCallStatement</c>
-	/// labeled alternative in <see cref="LanguageParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterFuncCallStatement([NotNull] LanguageParser.FuncCallStatementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>funcCallStatement</c>
-	/// labeled alternative in <see cref="LanguageParser.statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitFuncCallStatement([NotNull] LanguageParser.FuncCallStatementContext context);
-	/// <summary>
 	/// Enter a parse tree produced by the <c>exprStatement</c>
 	/// labeled alternative in <see cref="LanguageParser.statement"/>.
 	/// </summary>
@@ -215,124 +203,6 @@ public interface ILanguageListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitIfStatement([NotNull] LanguageParser.IfStatementContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="LanguageParser.conditionStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterConditionStatement([NotNull] LanguageParser.ConditionStatementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="LanguageParser.conditionStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitConditionStatement([NotNull] LanguageParser.ConditionStatementContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>nameConditionVal</c>
-	/// labeled alternative in <see cref="LanguageParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterNameConditionVal([NotNull] LanguageParser.NameConditionValContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>nameConditionVal</c>
-	/// labeled alternative in <see cref="LanguageParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitNameConditionVal([NotNull] LanguageParser.NameConditionValContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>funcCallConditionVal</c>
-	/// labeled alternative in <see cref="LanguageParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterFuncCallConditionVal([NotNull] LanguageParser.FuncCallConditionValContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>funcCallConditionVal</c>
-	/// labeled alternative in <see cref="LanguageParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitFuncCallConditionVal([NotNull] LanguageParser.FuncCallConditionValContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>intValConditionVal</c>
-	/// labeled alternative in <see cref="LanguageParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterIntValConditionVal([NotNull] LanguageParser.IntValConditionValContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>intValConditionVal</c>
-	/// labeled alternative in <see cref="LanguageParser.value"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitIntValConditionVal([NotNull] LanguageParser.IntValConditionValContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>lessThanOrEqual</c>
-	/// labeled alternative in <see cref="LanguageParser.conditionalOperator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterLessThanOrEqual([NotNull] LanguageParser.LessThanOrEqualContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>lessThanOrEqual</c>
-	/// labeled alternative in <see cref="LanguageParser.conditionalOperator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitLessThanOrEqual([NotNull] LanguageParser.LessThanOrEqualContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>lessThan</c>
-	/// labeled alternative in <see cref="LanguageParser.conditionalOperator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterLessThan([NotNull] LanguageParser.LessThanContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>lessThan</c>
-	/// labeled alternative in <see cref="LanguageParser.conditionalOperator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitLessThan([NotNull] LanguageParser.LessThanContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>greaterThanOrEqual</c>
-	/// labeled alternative in <see cref="LanguageParser.conditionalOperator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterGreaterThanOrEqual([NotNull] LanguageParser.GreaterThanOrEqualContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>greaterThanOrEqual</c>
-	/// labeled alternative in <see cref="LanguageParser.conditionalOperator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitGreaterThanOrEqual([NotNull] LanguageParser.GreaterThanOrEqualContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>greaterThan</c>
-	/// labeled alternative in <see cref="LanguageParser.conditionalOperator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterGreaterThan([NotNull] LanguageParser.GreaterThanContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>greaterThan</c>
-	/// labeled alternative in <see cref="LanguageParser.conditionalOperator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitGreaterThan([NotNull] LanguageParser.GreaterThanContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>equal</c>
-	/// labeled alternative in <see cref="LanguageParser.conditionalOperator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterEqual([NotNull] LanguageParser.EqualContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>equal</c>
-	/// labeled alternative in <see cref="LanguageParser.conditionalOperator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitEqual([NotNull] LanguageParser.EqualContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>notEqual</c>
-	/// labeled alternative in <see cref="LanguageParser.conditionalOperator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterNotEqual([NotNull] LanguageParser.NotEqualContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>notEqual</c>
-	/// labeled alternative in <see cref="LanguageParser.conditionalOperator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitNotEqual([NotNull] LanguageParser.NotEqualContext context);
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="LanguageParser.elseStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -373,15 +243,25 @@ public interface ILanguageListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitFuncCall([NotNull] LanguageParser.FuncCallContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="LanguageParser.funcArguments"/>.
+	/// Enter a parse tree produced by <see cref="LanguageParser.arguments"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterFuncArguments([NotNull] LanguageParser.FuncArgumentsContext context);
+	void EnterArguments([NotNull] LanguageParser.ArgumentsContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="LanguageParser.funcArguments"/>.
+	/// Exit a parse tree produced by <see cref="LanguageParser.arguments"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitFuncArguments([NotNull] LanguageParser.FuncArgumentsContext context);
+	void ExitArguments([NotNull] LanguageParser.ArgumentsContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="LanguageParser.argumentList"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterArgumentList([NotNull] LanguageParser.ArgumentListContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="LanguageParser.argumentList"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitArgumentList([NotNull] LanguageParser.ArgumentListContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="LanguageParser.variableDeclaration"/>.
 	/// </summary>
@@ -403,17 +283,39 @@ public interface ILanguageListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitVariableAssignment([NotNull] LanguageParser.VariableAssignmentContext context);
 	/// <summary>
-	/// Enter a parse tree produced by the <c>notExpr</c>
-	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// Enter a parse tree produced by <see cref="LanguageParser.assignment"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterNotExpr([NotNull] LanguageParser.NotExprContext context);
+	void EnterAssignment([NotNull] LanguageParser.AssignmentContext context);
 	/// <summary>
-	/// Exit a parse tree produced by the <c>notExpr</c>
+	/// Exit a parse tree produced by <see cref="LanguageParser.assignment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAssignment([NotNull] LanguageParser.AssignmentContext context);
+	/// <summary>
+	/// Enter a parse tree produced by the <c>greaterThanOrEqualExpr</c>
 	/// labeled alternative in <see cref="LanguageParser.expr"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitNotExpr([NotNull] LanguageParser.NotExprContext context);
+	void EnterGreaterThanOrEqualExpr([NotNull] LanguageParser.GreaterThanOrEqualExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>greaterThanOrEqualExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitGreaterThanOrEqualExpr([NotNull] LanguageParser.GreaterThanOrEqualExprContext context);
+	/// <summary>
+	/// Enter a parse tree produced by the <c>lessThanOrEqualExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLessThanOrEqualExpr([NotNull] LanguageParser.LessThanOrEqualExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>lessThanOrEqualExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLessThanOrEqualExpr([NotNull] LanguageParser.LessThanOrEqualExprContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>additionExpr</c>
 	/// labeled alternative in <see cref="LanguageParser.expr"/>.
@@ -427,17 +329,17 @@ public interface ILanguageListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitAdditionExpr([NotNull] LanguageParser.AdditionExprContext context);
 	/// <summary>
-	/// Enter a parse tree produced by the <c>multiplicationExpr</c>
+	/// Enter a parse tree produced by the <c>lessThanExpr</c>
 	/// labeled alternative in <see cref="LanguageParser.expr"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterMultiplicationExpr([NotNull] LanguageParser.MultiplicationExprContext context);
+	void EnterLessThanExpr([NotNull] LanguageParser.LessThanExprContext context);
 	/// <summary>
-	/// Exit a parse tree produced by the <c>multiplicationExpr</c>
+	/// Exit a parse tree produced by the <c>lessThanExpr</c>
 	/// labeled alternative in <see cref="LanguageParser.expr"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitMultiplicationExpr([NotNull] LanguageParser.MultiplicationExprContext context);
+	void ExitLessThanExpr([NotNull] LanguageParser.LessThanExprContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>orExpr</c>
 	/// labeled alternative in <see cref="LanguageParser.expr"/>.
@@ -451,6 +353,18 @@ public interface ILanguageListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitOrExpr([NotNull] LanguageParser.OrExprContext context);
 	/// <summary>
+	/// Enter a parse tree produced by the <c>funcCallExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterFuncCallExpr([NotNull] LanguageParser.FuncCallExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>funcCallExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitFuncCallExpr([NotNull] LanguageParser.FuncCallExprContext context);
+	/// <summary>
 	/// Enter a parse tree produced by the <c>intValueExper</c>
 	/// labeled alternative in <see cref="LanguageParser.expr"/>.
 	/// </summary>
@@ -462,18 +376,6 @@ public interface ILanguageListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitIntValueExper([NotNull] LanguageParser.IntValueExperContext context);
-	/// <summary>
-	/// Enter a parse tree produced by the <c>parenthesisExpr</c>
-	/// labeled alternative in <see cref="LanguageParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterParenthesisExpr([NotNull] LanguageParser.ParenthesisExprContext context);
-	/// <summary>
-	/// Exit a parse tree produced by the <c>parenthesisExpr</c>
-	/// labeled alternative in <see cref="LanguageParser.expr"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitParenthesisExpr([NotNull] LanguageParser.ParenthesisExprContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>nameExpr</c>
 	/// labeled alternative in <see cref="LanguageParser.expr"/>.
@@ -511,6 +413,78 @@ public interface ILanguageListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitSubtractionExpr([NotNull] LanguageParser.SubtractionExprContext context);
 	/// <summary>
+	/// Enter a parse tree produced by the <c>greaterThanExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterGreaterThanExpr([NotNull] LanguageParser.GreaterThanExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>greaterThanExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitGreaterThanExpr([NotNull] LanguageParser.GreaterThanExprContext context);
+	/// <summary>
+	/// Enter a parse tree produced by the <c>notExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterNotExpr([NotNull] LanguageParser.NotExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>notExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitNotExpr([NotNull] LanguageParser.NotExprContext context);
+	/// <summary>
+	/// Enter a parse tree produced by the <c>multiplicationExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterMultiplicationExpr([NotNull] LanguageParser.MultiplicationExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>multiplicationExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitMultiplicationExpr([NotNull] LanguageParser.MultiplicationExprContext context);
+	/// <summary>
+	/// Enter a parse tree produced by the <c>notEqualExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterNotEqualExpr([NotNull] LanguageParser.NotEqualExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>notEqualExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitNotEqualExpr([NotNull] LanguageParser.NotEqualExprContext context);
+	/// <summary>
+	/// Enter a parse tree produced by the <c>parenthesisExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterParenthesisExpr([NotNull] LanguageParser.ParenthesisExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>parenthesisExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitParenthesisExpr([NotNull] LanguageParser.ParenthesisExprContext context);
+	/// <summary>
+	/// Enter a parse tree produced by the <c>equalExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterEqualExpr([NotNull] LanguageParser.EqualExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>equalExpr</c>
+	/// labeled alternative in <see cref="LanguageParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitEqualExpr([NotNull] LanguageParser.EqualExprContext context);
+	/// <summary>
 	/// Enter a parse tree produced by the <c>andExpr</c>
 	/// labeled alternative in <see cref="LanguageParser.expr"/>.
 	/// </summary>
@@ -522,16 +496,6 @@ public interface ILanguageListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitAndExpr([NotNull] LanguageParser.AndExprContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="LanguageParser.empty"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterEmpty([NotNull] LanguageParser.EmptyContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="LanguageParser.empty"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitEmpty([NotNull] LanguageParser.EmptyContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="LanguageParser.name"/>.
 	/// </summary>
