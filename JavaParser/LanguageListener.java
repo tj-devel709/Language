@@ -17,55 +17,159 @@ public interface LanguageListener extends ParseTreeListener {
 	 */
 	void exitFile(LanguageParser.FileContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LanguageParser#func}.
+	 * Enter a parse tree produced by {@link LanguageParser#functionDeclaration}.
 	 * @param ctx the parse tree
 	 */
-	void enterFunc(LanguageParser.FuncContext ctx);
+	void enterFunctionDeclaration(LanguageParser.FunctionDeclarationContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LanguageParser#func}.
+	 * Exit a parse tree produced by {@link LanguageParser#functionDeclaration}.
 	 * @param ctx the parse tree
 	 */
-	void exitFunc(LanguageParser.FuncContext ctx);
+	void exitFunctionDeclaration(LanguageParser.FunctionDeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LanguageParser#funcDeclaration}.
+	 * Enter a parse tree produced by {@link LanguageParser#funcHead}.
 	 * @param ctx the parse tree
 	 */
-	void enterFuncDeclaration(LanguageParser.FuncDeclarationContext ctx);
+	void enterFuncHead(LanguageParser.FuncHeadContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LanguageParser#funcDeclaration}.
+	 * Exit a parse tree produced by {@link LanguageParser#funcHead}.
 	 * @param ctx the parse tree
 	 */
-	void exitFuncDeclaration(LanguageParser.FuncDeclarationContext ctx);
+	void exitFuncHead(LanguageParser.FuncHeadContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LanguageParser#funcName}.
+	 * Enter a parse tree produced by {@link LanguageParser#arguments}.
 	 * @param ctx the parse tree
 	 */
-	void enterFuncName(LanguageParser.FuncNameContext ctx);
+	void enterArguments(LanguageParser.ArgumentsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LanguageParser#funcName}.
+	 * Exit a parse tree produced by {@link LanguageParser#arguments}.
 	 * @param ctx the parse tree
 	 */
-	void exitFuncName(LanguageParser.FuncNameContext ctx);
+	void exitArguments(LanguageParser.ArgumentsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LanguageParser#funcArguments}.
+	 * Enter a parse tree produced by {@link LanguageParser#argumentlist}.
 	 * @param ctx the parse tree
 	 */
-	void enterFuncArguments(LanguageParser.FuncArgumentsContext ctx);
+	void enterArgumentlist(LanguageParser.ArgumentlistContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LanguageParser#funcArguments}.
+	 * Exit a parse tree produced by {@link LanguageParser#argumentlist}.
 	 * @param ctx the parse tree
 	 */
-	void exitFuncArguments(LanguageParser.FuncArgumentsContext ctx);
+	void exitArgumentlist(LanguageParser.ArgumentlistContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LanguageParser#funcBody}.
+	 * Enter a parse tree produced by {@link LanguageParser#argument}.
 	 * @param ctx the parse tree
 	 */
-	void enterFuncBody(LanguageParser.FuncBodyContext ctx);
+	void enterArgument(LanguageParser.ArgumentContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LanguageParser#funcBody}.
+	 * Exit a parse tree produced by {@link LanguageParser#argument}.
 	 * @param ctx the parse tree
 	 */
-	void exitFuncBody(LanguageParser.FuncBodyContext ctx);
+	void exitArgument(LanguageParser.ArgumentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LanguageParser#body}.
+	 * @param ctx the parse tree
+	 */
+	void enterBody(LanguageParser.BodyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LanguageParser#body}.
+	 * @param ctx the parse tree
+	 */
+	void exitBody(LanguageParser.BodyContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LanguageParser#statements}.
+	 * @param ctx the parse tree
+	 */
+	void enterStatements(LanguageParser.StatementsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LanguageParser#statements}.
+	 * @param ctx the parse tree
+	 */
+	void exitStatements(LanguageParser.StatementsContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code conditionalStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterConditionalStatement(LanguageParser.ConditionalStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code conditionalStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitConditionalStatement(LanguageParser.ConditionalStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varAssignStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarAssignStatement(LanguageParser.VarAssignStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varAssignStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarAssignStatement(LanguageParser.VarAssignStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varDeclStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarDeclStatement(LanguageParser.VarDeclStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varDeclStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarDeclStatement(LanguageParser.VarDeclStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code funcCallStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterFuncCallStatement(LanguageParser.FuncCallStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code funcCallStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitFuncCallStatement(LanguageParser.FuncCallStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprStatement(LanguageParser.ExprStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprStatement(LanguageParser.ExprStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code retStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterRetStatement(LanguageParser.RetStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code retStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitRetStatement(LanguageParser.RetStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code emptyStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterEmptyStatement(LanguageParser.EmptyStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code emptyStatement}
+	 * labeled alternative in {@link LanguageParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitEmptyStatement(LanguageParser.EmptyStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LanguageParser#conditional}.
 	 * @param ctx the parse tree
@@ -87,35 +191,123 @@ public interface LanguageListener extends ParseTreeListener {
 	 */
 	void exitIfStatement(LanguageParser.IfStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LanguageParser#condition}.
+	 * Enter a parse tree produced by {@link LanguageParser#conditionStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterCondition(LanguageParser.ConditionContext ctx);
+	void enterConditionStatement(LanguageParser.ConditionStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LanguageParser#condition}.
+	 * Exit a parse tree produced by {@link LanguageParser#conditionStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitCondition(LanguageParser.ConditionContext ctx);
+	void exitConditionStatement(LanguageParser.ConditionStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LanguageParser#conditionalOperator}.
+	 * Enter a parse tree produced by the {@code nameConditionVal}
+	 * labeled alternative in {@link LanguageParser#value}.
 	 * @param ctx the parse tree
 	 */
-	void enterConditionalOperator(LanguageParser.ConditionalOperatorContext ctx);
+	void enterNameConditionVal(LanguageParser.NameConditionValContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LanguageParser#conditionalOperator}.
+	 * Exit a parse tree produced by the {@code nameConditionVal}
+	 * labeled alternative in {@link LanguageParser#value}.
 	 * @param ctx the parse tree
 	 */
-	void exitConditionalOperator(LanguageParser.ConditionalOperatorContext ctx);
+	void exitNameConditionVal(LanguageParser.NameConditionValContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LanguageParser#returnStatement}.
+	 * Enter a parse tree produced by the {@code funcCallConditionVal}
+	 * labeled alternative in {@link LanguageParser#value}.
 	 * @param ctx the parse tree
 	 */
-	void enterReturnStatement(LanguageParser.ReturnStatementContext ctx);
+	void enterFuncCallConditionVal(LanguageParser.FuncCallConditionValContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LanguageParser#returnStatement}.
+	 * Exit a parse tree produced by the {@code funcCallConditionVal}
+	 * labeled alternative in {@link LanguageParser#value}.
 	 * @param ctx the parse tree
 	 */
-	void exitReturnStatement(LanguageParser.ReturnStatementContext ctx);
+	void exitFuncCallConditionVal(LanguageParser.FuncCallConditionValContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code intValConditionVal}
+	 * labeled alternative in {@link LanguageParser#value}.
+	 * @param ctx the parse tree
+	 */
+	void enterIntValConditionVal(LanguageParser.IntValConditionValContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code intValConditionVal}
+	 * labeled alternative in {@link LanguageParser#value}.
+	 * @param ctx the parse tree
+	 */
+	void exitIntValConditionVal(LanguageParser.IntValConditionValContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code lessThanOrEqual}
+	 * labeled alternative in {@link LanguageParser#conditionalOperator}.
+	 * @param ctx the parse tree
+	 */
+	void enterLessThanOrEqual(LanguageParser.LessThanOrEqualContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code lessThanOrEqual}
+	 * labeled alternative in {@link LanguageParser#conditionalOperator}.
+	 * @param ctx the parse tree
+	 */
+	void exitLessThanOrEqual(LanguageParser.LessThanOrEqualContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code lessThan}
+	 * labeled alternative in {@link LanguageParser#conditionalOperator}.
+	 * @param ctx the parse tree
+	 */
+	void enterLessThan(LanguageParser.LessThanContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code lessThan}
+	 * labeled alternative in {@link LanguageParser#conditionalOperator}.
+	 * @param ctx the parse tree
+	 */
+	void exitLessThan(LanguageParser.LessThanContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code greaterThanOrEqual}
+	 * labeled alternative in {@link LanguageParser#conditionalOperator}.
+	 * @param ctx the parse tree
+	 */
+	void enterGreaterThanOrEqual(LanguageParser.GreaterThanOrEqualContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code greaterThanOrEqual}
+	 * labeled alternative in {@link LanguageParser#conditionalOperator}.
+	 * @param ctx the parse tree
+	 */
+	void exitGreaterThanOrEqual(LanguageParser.GreaterThanOrEqualContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code greaterThan}
+	 * labeled alternative in {@link LanguageParser#conditionalOperator}.
+	 * @param ctx the parse tree
+	 */
+	void enterGreaterThan(LanguageParser.GreaterThanContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code greaterThan}
+	 * labeled alternative in {@link LanguageParser#conditionalOperator}.
+	 * @param ctx the parse tree
+	 */
+	void exitGreaterThan(LanguageParser.GreaterThanContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code equal}
+	 * labeled alternative in {@link LanguageParser#conditionalOperator}.
+	 * @param ctx the parse tree
+	 */
+	void enterEqual(LanguageParser.EqualContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code equal}
+	 * labeled alternative in {@link LanguageParser#conditionalOperator}.
+	 * @param ctx the parse tree
+	 */
+	void exitEqual(LanguageParser.EqualContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code notEqual}
+	 * labeled alternative in {@link LanguageParser#conditionalOperator}.
+	 * @param ctx the parse tree
+	 */
+	void enterNotEqual(LanguageParser.NotEqualContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code notEqual}
+	 * labeled alternative in {@link LanguageParser#conditionalOperator}.
+	 * @param ctx the parse tree
+	 */
+	void exitNotEqual(LanguageParser.NotEqualContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LanguageParser#elseStatement}.
 	 * @param ctx the parse tree
@@ -127,6 +319,16 @@ public interface LanguageListener extends ParseTreeListener {
 	 */
 	void exitElseStatement(LanguageParser.ElseStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LanguageParser#returnStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterReturnStatement(LanguageParser.ReturnStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LanguageParser#returnStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitReturnStatement(LanguageParser.ReturnStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LanguageParser#end}.
 	 * @param ctx the parse tree
 	 */
@@ -137,36 +339,6 @@ public interface LanguageListener extends ParseTreeListener {
 	 */
 	void exitEnd(LanguageParser.EndContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LanguageParser#pseudoFunctions}.
-	 * @param ctx the parse tree
-	 */
-	void enterPseudoFunctions(LanguageParser.PseudoFunctionsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LanguageParser#pseudoFunctions}.
-	 * @param ctx the parse tree
-	 */
-	void exitPseudoFunctions(LanguageParser.PseudoFunctionsContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link LanguageParser#print}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrint(LanguageParser.PrintContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LanguageParser#print}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrint(LanguageParser.PrintContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link LanguageParser#println}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrintln(LanguageParser.PrintlnContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LanguageParser#println}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrintln(LanguageParser.PrintlnContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link LanguageParser#funcCall}.
 	 * @param ctx the parse tree
 	 */
@@ -176,6 +348,16 @@ public interface LanguageListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFuncCall(LanguageParser.FuncCallContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LanguageParser#funcArguments}.
+	 * @param ctx the parse tree
+	 */
+	void enterFuncArguments(LanguageParser.FuncArgumentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LanguageParser#funcArguments}.
+	 * @param ctx the parse tree
+	 */
+	void exitFuncArguments(LanguageParser.FuncArgumentsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LanguageParser#variableDeclaration}.
 	 * @param ctx the parse tree
@@ -208,18 +390,6 @@ public interface LanguageListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitNotExpr(LanguageParser.NotExprContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code intValue}
-	 * labeled alternative in {@link LanguageParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterIntValue(LanguageParser.IntValueContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code intValue}
-	 * labeled alternative in {@link LanguageParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitIntValue(LanguageParser.IntValueContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code additionExpr}
 	 * labeled alternative in {@link LanguageParser#expr}.
@@ -257,17 +427,17 @@ public interface LanguageListener extends ParseTreeListener {
 	 */
 	void exitOrExpr(LanguageParser.OrExprContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code word}
+	 * Enter a parse tree produced by the {@code intValueExper}
 	 * labeled alternative in {@link LanguageParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void enterWord(LanguageParser.WordContext ctx);
+	void enterIntValueExper(LanguageParser.IntValueExperContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code word}
+	 * Exit a parse tree produced by the {@code intValueExper}
 	 * labeled alternative in {@link LanguageParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitWord(LanguageParser.WordContext ctx);
+	void exitIntValueExper(LanguageParser.IntValueExperContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code parenthesisExpr}
 	 * labeled alternative in {@link LanguageParser#expr}.
@@ -280,6 +450,18 @@ public interface LanguageListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitParenthesisExpr(LanguageParser.ParenthesisExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code nameExpr}
+	 * labeled alternative in {@link LanguageParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterNameExpr(LanguageParser.NameExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code nameExpr}
+	 * labeled alternative in {@link LanguageParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitNameExpr(LanguageParser.NameExprContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code divisionExpr}
 	 * labeled alternative in {@link LanguageParser#expr}.
@@ -316,6 +498,26 @@ public interface LanguageListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAndExpr(LanguageParser.AndExprContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LanguageParser#empty}.
+	 * @param ctx the parse tree
+	 */
+	void enterEmpty(LanguageParser.EmptyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LanguageParser#empty}.
+	 * @param ctx the parse tree
+	 */
+	void exitEmpty(LanguageParser.EmptyContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LanguageParser#name}.
+	 * @param ctx the parse tree
+	 */
+	void enterName(LanguageParser.NameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LanguageParser#name}.
+	 * @param ctx the parse tree
+	 */
+	void exitName(LanguageParser.NameContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LanguageParser#intvalue}.
 	 * @param ctx the parse tree
