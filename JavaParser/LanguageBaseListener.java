@@ -27,61 +27,169 @@ public class LanguageBaseListener implements LanguageListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunc(LanguageParser.FuncContext ctx) { }
+	@Override public void enterFunctionDeclaration(LanguageParser.FunctionDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunc(LanguageParser.FuncContext ctx) { }
+	@Override public void exitFunctionDeclaration(LanguageParser.FunctionDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFuncDeclaration(LanguageParser.FuncDeclarationContext ctx) { }
+	@Override public void enterFuncHead(LanguageParser.FuncHeadContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFuncDeclaration(LanguageParser.FuncDeclarationContext ctx) { }
+	@Override public void exitFuncHead(LanguageParser.FuncHeadContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFuncName(LanguageParser.FuncNameContext ctx) { }
+	@Override public void enterArguments(LanguageParser.ArgumentsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFuncName(LanguageParser.FuncNameContext ctx) { }
+	@Override public void exitArguments(LanguageParser.ArgumentsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFuncArguments(LanguageParser.FuncArgumentsContext ctx) { }
+	@Override public void enterArgumentlist(LanguageParser.ArgumentlistContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFuncArguments(LanguageParser.FuncArgumentsContext ctx) { }
+	@Override public void exitArgumentlist(LanguageParser.ArgumentlistContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFuncBody(LanguageParser.FuncBodyContext ctx) { }
+	@Override public void enterArgument(LanguageParser.ArgumentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFuncBody(LanguageParser.FuncBodyContext ctx) { }
+	@Override public void exitArgument(LanguageParser.ArgumentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBody(LanguageParser.BodyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBody(LanguageParser.BodyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStatements(LanguageParser.StatementsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStatements(LanguageParser.StatementsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterConditionalStatement(LanguageParser.ConditionalStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConditionalStatement(LanguageParser.ConditionalStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarAssignStatement(LanguageParser.VarAssignStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarAssignStatement(LanguageParser.VarAssignStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarDeclStatement(LanguageParser.VarDeclStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarDeclStatement(LanguageParser.VarDeclStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFuncCallStatement(LanguageParser.FuncCallStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFuncCallStatement(LanguageParser.FuncCallStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprStatement(LanguageParser.ExprStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprStatement(LanguageParser.ExprStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterRetStatement(LanguageParser.RetStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitRetStatement(LanguageParser.RetStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEmptyStatement(LanguageParser.EmptyStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEmptyStatement(LanguageParser.EmptyStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -111,37 +219,121 @@ public class LanguageBaseListener implements LanguageListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCondition(LanguageParser.ConditionContext ctx) { }
+	@Override public void enterConditionStatement(LanguageParser.ConditionStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCondition(LanguageParser.ConditionContext ctx) { }
+	@Override public void exitConditionStatement(LanguageParser.ConditionStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConditionalOperator(LanguageParser.ConditionalOperatorContext ctx) { }
+	@Override public void enterNameConditionVal(LanguageParser.NameConditionValContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConditionalOperator(LanguageParser.ConditionalOperatorContext ctx) { }
+	@Override public void exitNameConditionVal(LanguageParser.NameConditionValContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterReturnStatement(LanguageParser.ReturnStatementContext ctx) { }
+	@Override public void enterFuncCallConditionVal(LanguageParser.FuncCallConditionValContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitReturnStatement(LanguageParser.ReturnStatementContext ctx) { }
+	@Override public void exitFuncCallConditionVal(LanguageParser.FuncCallConditionValContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIntValConditionVal(LanguageParser.IntValConditionValContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIntValConditionVal(LanguageParser.IntValConditionValContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLessThanOrEqual(LanguageParser.LessThanOrEqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLessThanOrEqual(LanguageParser.LessThanOrEqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLessThan(LanguageParser.LessThanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLessThan(LanguageParser.LessThanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterGreaterThanOrEqual(LanguageParser.GreaterThanOrEqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitGreaterThanOrEqual(LanguageParser.GreaterThanOrEqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterGreaterThan(LanguageParser.GreaterThanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitGreaterThan(LanguageParser.GreaterThanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEqual(LanguageParser.EqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEqual(LanguageParser.EqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNotEqual(LanguageParser.NotEqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNotEqual(LanguageParser.NotEqualContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -159,6 +351,18 @@ public class LanguageBaseListener implements LanguageListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterReturnStatement(LanguageParser.ReturnStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitReturnStatement(LanguageParser.ReturnStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterEnd(LanguageParser.EndContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -171,42 +375,6 @@ public class LanguageBaseListener implements LanguageListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPseudoFunctions(LanguageParser.PseudoFunctionsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPseudoFunctions(LanguageParser.PseudoFunctionsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterPrint(LanguageParser.PrintContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPrint(LanguageParser.PrintContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterPrintln(LanguageParser.PrintlnContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPrintln(LanguageParser.PrintlnContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterFuncCall(LanguageParser.FuncCallContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -214,6 +382,18 @@ public class LanguageBaseListener implements LanguageListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitFuncCall(LanguageParser.FuncCallContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFuncArguments(LanguageParser.FuncArgumentsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFuncArguments(LanguageParser.FuncArgumentsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -255,18 +435,6 @@ public class LanguageBaseListener implements LanguageListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIntValue(LanguageParser.IntValueContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitIntValue(LanguageParser.IntValueContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterAdditionExpr(LanguageParser.AdditionExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -303,13 +471,13 @@ public class LanguageBaseListener implements LanguageListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWord(LanguageParser.WordContext ctx) { }
+	@Override public void enterIntValueExper(LanguageParser.IntValueExperContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWord(LanguageParser.WordContext ctx) { }
+	@Override public void exitIntValueExper(LanguageParser.IntValueExperContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -322,6 +490,18 @@ public class LanguageBaseListener implements LanguageListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitParenthesisExpr(LanguageParser.ParenthesisExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNameExpr(LanguageParser.NameExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNameExpr(LanguageParser.NameExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -358,6 +538,30 @@ public class LanguageBaseListener implements LanguageListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAndExpr(LanguageParser.AndExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEmpty(LanguageParser.EmptyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEmpty(LanguageParser.EmptyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterName(LanguageParser.NameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitName(LanguageParser.NameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

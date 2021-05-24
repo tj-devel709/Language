@@ -1,45 +1,54 @@
 grammar Language;		
-file: NEWLINE* (func NEWLINE)* ;
+file: functionDeclaration* ;
 
-// func
-func: funcDeclaration funcBody end ;
-funcDeclaration: 'func' funcName funcArguments 'begin' ;
-funcName: WORD ;
-funcArguments: '(' (WORD (',' WORD)*)? ')' ;
+functionDeclaration: funcHead arguments body;
+funcHead: 'func' name ;
+arguments: '(' argumentlist? ')' ;
+argumentlist: argument (',' argument)* ;
+argument: name ;
 
-funcBody: NEWLINE funcBody NEWLINE* funcBody?
-		| conditional
-		| variableDeclaration
-		| variableAssignment
-		| pseudoFunctions
-		;
+body: 'begin' statements 'end';
+statements: statement* ;
 
-// conditional
-conditional: ifStatement
-		   | ifStatement elseStatement
-		   ;
-ifStatement: 'if' condition 'then begin' returnStatement end;
-condition: WORD conditionalOperator WORD ;
-conditionalOperator: ('<=' | '<' | '>=' | '>' | '==' | '!=') ;
-returnStatement: NEWLINE 'return' WORD ';' ;
+statement: conditional #conditionalStatement
+	| variableAssignment #varAssignStatement
+	| variableDeclaration #varDeclStatement
+	| funcCall #funcCallStatement
+	| expr #exprStatement
+	| returnStatement #retStatement
+	| empty #emptyStatement
+	;
+
+conditional: ifStatement elseStatement? ;
+
+ifStatement: 'if' conditionStatement 'then begin' statement* end;
+conditionStatement: value conditionalOperator value 
+	| value
+	;
+value: name #nameConditionVal
+	| funcCall #funcCallConditionVal
+	| intvalue #intValConditionVal
+	;
+conditionalOperator: '<=' #lessThanOrEqual
+	| '<' #lessThan
+	| '>=' #greaterThanOrEqual
+	| '>' #greaterThan
+	| '==' #equal
+	| '!=' #notEqual
+	;
 elseStatement: 'else begin' returnStatement end;
-end: NEWLINE 'end' ;
+returnStatement: 'return' value ';' ;
+end: 'end' ;
 
-//pseudo functions
-pseudoFunctions: println
-			   | print
-			   ;
-print: 'print' funcCall ;
-println: 'println' funcCall ;
-funcCall: '(' WORD funcArguments ')'
-		| funcArguments
-		;
+funcCall: name funcArguments ;
 
-// variable
-variableDeclaration: 'var' WORD ';' ;
-variableAssignment: WORD '<-' expr ';' ;
+funcArguments: ('(' funcCall ')')
+	| arguments
+	;
 
-// operators
+variableDeclaration: 'var' name ';' ;
+variableAssignment: name '<-' expr ';' ;
+
 expr:	expr ('*') expr # multiplicationExpr
     |	expr ('/') expr # divisionExpr
     |	expr ('+') expr # additionExpr
@@ -47,19 +56,21 @@ expr:	expr ('*') expr # multiplicationExpr
 	|	expr ('and') expr # andExpr
 	|	expr ('or') expr # orExpr
 	|	expr ('^') expr # notExpr
-    |	intvalue # intValue
-	|	WORD # word
+    |	intvalue # intValueExper
+	|	name # nameExpr
     |	'(' expr ')' # parenthesisExpr
     ;
-intvalue: NOT? NEGATIVE? INT
-		| NEGATIVE? NOT? INT
-		;
 
+empty: EMPTY ;
+name: WORD ;
+intvalue: NOT? NEGATIVE? INT
+	| NEGATIVE? NOT? INT
+	;
 
 // lexer
 WORD 				: [a-zA-Z0-9]+			;
+EMPTY				: ';'					;
 NEGATIVE			: '-'					;
 NOT					: 'not'					;
-NEWLINE 			: [\r\n]+ 				;
 INT					: [0-9]+ 				;
 WHITESPACE			: (' ') -> skip 		;
