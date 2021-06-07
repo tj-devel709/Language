@@ -11,8 +11,8 @@ body: 'begin' statements 'end';
 statements: statement* ;
 
 statement: conditional #conditionalStatement
-	| variableAssignment ';' #varAssignStatement
-	| variableDeclaration ';' #varDeclStatement
+	| variableDeclarationList ';' #varDeclarationListStatement
+	| variableAssignment ';' #varAssignmentStatement
 	| expr ';' #exprStatement
 	| returnStatement ';' #retStatement
 	| ';' #emptyStatement
@@ -22,17 +22,16 @@ conditional: ifStatement elseStatement? ;
 
 ifStatement: 'if' expr 'then begin' statement* end;
 elseStatement: 'else begin' statement* end ;
-returnStatement: 'return' expr ';' ;
+returnStatement: 'return' expr;
 end: 'end' ;
 
 funcCall: name arguments ;
 arguments: '(' argumentList? ')' ;
 argumentList: expr (',' expr)* ;
 
-variableDeclaration: 'var' name ';' 
-	| 'var' name assignment ';'
-	;
-variableAssignment: name assignment ';' ;
+variableDeclarationList: 'var' variable (',' variable)* ;
+variableAssignment: name assignment ;
+variable: name assignment? ;
 assignment: '<-' expr ;
 
 expr:	expr '*' expr # multiplicationExpr
@@ -59,9 +58,13 @@ intvalue: NOT? NEGATIVE? INT
 	| NEGATIVE? NOT? INT
 	;
 
+// TODO Comments
+// single line and block -check Antlr examples
+
+
 // lexer
 WORD 				: [a-zA-Z0-9]+			;
 NEGATIVE			: '-'					;
 NOT					: 'not'					;
 INT					: [0-9]+ 				;
-WHITESPACE			: (' ') -> skip 		;
+WHITESPACE			: (' ' | '\n' | '\t') -> skip 		; //       incoud  include newlines and tabs
