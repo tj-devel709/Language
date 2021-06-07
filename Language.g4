@@ -26,7 +26,7 @@ returnStatement: 'return' expr ';' ;
 end: 'end' ;
 
 funcCall: name arguments ;
-arguments: '(' parameterList? ')' ;
+arguments: '(' argumentList? ')' ;
 argumentList: expr (',' expr)* ;
 
 variableDeclaration: 'var' name ';' 

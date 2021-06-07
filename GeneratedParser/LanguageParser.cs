@@ -1038,8 +1038,8 @@ public partial class LanguageParser : Parser {
 	}
 
 	public partial class ArgumentsContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ParameterListContext parameterList() {
-			return GetRuleContext<ParameterListContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public ArgumentListContext argumentList() {
+			return GetRuleContext<ArgumentListContext>(0);
 		}
 		public ArgumentsContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -1071,10 +1071,10 @@ public partial class LanguageParser : Parser {
 			State = 136;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
-			if (_la==WORD) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << WORD) | (1L << NEGATIVE) | (1L << NOT) | (1L << INT))) != 0)) {
 				{
 				State = 135;
-				parameterList();
+				argumentList();
 				}
 			}
 
@@ -2179,7 +2179,7 @@ public partial class LanguageParser : Parser {
 		'\a', '\b', '\x2', '\x2', '\x84', '\x1D', '\x3', '\x2', '\x2', '\x2', 
 		'\x85', '\x86', '\x5', ',', '\x17', '\x2', '\x86', '\x87', '\x5', ' ', 
 		'\x11', '\x2', '\x87', '\x1F', '\x3', '\x2', '\x2', '\x2', '\x88', '\x8A', 
-		'\a', '\x4', '\x2', '\x2', '\x89', '\x8B', '\x5', '\n', '\x6', '\x2', 
+		'\a', '\x4', '\x2', '\x2', '\x89', '\x8B', '\x5', '\"', '\x12', '\x2', 
 		'\x8A', '\x89', '\x3', '\x2', '\x2', '\x2', '\x8A', '\x8B', '\x3', '\x2', 
 		'\x2', '\x2', '\x8B', '\x8C', '\x3', '\x2', '\x2', '\x2', '\x8C', '\x8D', 
 		'\a', '\x5', '\x2', '\x2', '\x8D', '!', '\x3', '\x2', '\x2', '\x2', '\x8E', 

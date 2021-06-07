@@ -1,5 +1,10 @@
 # Written by Steve Hawley and used inside Xamarin.Binding-Tools-for-Swift Interface Parser and edited to fit this project
 
+### Local information to paste to Terminal to test [Temporary]
+# export CLASSPATH=".:/Users/tjlambert/Documents/LanguageProject/Language/antlr/antlr-4.9.2-complete.jar:$CLASSPATH"
+# alias antlr4='java -Xmx500M -cp "/Users/tjlambert/Documents/LanguageProject/Language/antlr/antlr-4.9.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
+# alias grun='java -Xmx500M -cp "/Users/tjlambert/Documents/LanguageProject/Language/antlr/antlr-4.9.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
+
 ANTLRJAR=antlr/antlr-4.9.2-complete.jar
 ANTLR=java -jar $(ANTLRJAR)
 CLASSPATH=.:$(ANTLRJAR)
