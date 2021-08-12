@@ -1,0 +1,21 @@
+func min(a, b) begin
+    if a < b then begin
+        return a;
+    end else begin
+        return b;
+    end
+end
+
+func max (a, b) begin
+    var diff;
+    diff <- a - b;
+    if diff < 0 then begin
+        return b;
+    end else begin
+        return a;
+    end
+end
+
+func main () begin
+    println(max(3, 4));
+end

@@ -99,29 +99,29 @@ public interface LanguageListener extends ParseTreeListener {
 	 */
 	void exitConditionalStatement(LanguageParser.ConditionalStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code varAssignStatement}
+	 * Enter a parse tree produced by the {@code varDeclarationListStatement}
 	 * labeled alternative in {@link LanguageParser#statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterVarAssignStatement(LanguageParser.VarAssignStatementContext ctx);
+	void enterVarDeclarationListStatement(LanguageParser.VarDeclarationListStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code varAssignStatement}
+	 * Exit a parse tree produced by the {@code varDeclarationListStatement}
 	 * labeled alternative in {@link LanguageParser#statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitVarAssignStatement(LanguageParser.VarAssignStatementContext ctx);
+	void exitVarDeclarationListStatement(LanguageParser.VarDeclarationListStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code varDeclStatement}
+	 * Enter a parse tree produced by the {@code varAssignmentStatement}
 	 * labeled alternative in {@link LanguageParser#statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterVarDeclStatement(LanguageParser.VarDeclStatementContext ctx);
+	void enterVarAssignmentStatement(LanguageParser.VarAssignmentStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code varDeclStatement}
+	 * Exit a parse tree produced by the {@code varAssignmentStatement}
 	 * labeled alternative in {@link LanguageParser#statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitVarDeclStatement(LanguageParser.VarDeclStatementContext ctx);
+	void exitVarAssignmentStatement(LanguageParser.VarAssignmentStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code exprStatement}
 	 * labeled alternative in {@link LanguageParser#statement}.
@@ -239,15 +239,15 @@ public interface LanguageListener extends ParseTreeListener {
 	 */
 	void exitArgumentList(LanguageParser.ArgumentListContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LanguageParser#variableDeclaration}.
+	 * Enter a parse tree produced by {@link LanguageParser#variableDeclarationList}.
 	 * @param ctx the parse tree
 	 */
-	void enterVariableDeclaration(LanguageParser.VariableDeclarationContext ctx);
+	void enterVariableDeclarationList(LanguageParser.VariableDeclarationListContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LanguageParser#variableDeclaration}.
+	 * Exit a parse tree produced by {@link LanguageParser#variableDeclarationList}.
 	 * @param ctx the parse tree
 	 */
-	void exitVariableDeclaration(LanguageParser.VariableDeclarationContext ctx);
+	void exitVariableDeclarationList(LanguageParser.VariableDeclarationListContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LanguageParser#variableAssignment}.
 	 * @param ctx the parse tree
@@ -258,6 +258,16 @@ public interface LanguageListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVariableAssignment(LanguageParser.VariableAssignmentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LanguageParser#variable}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariable(LanguageParser.VariableContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LanguageParser#variable}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariable(LanguageParser.VariableContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LanguageParser#assignment}.
 	 * @param ctx the parse tree
@@ -292,6 +302,18 @@ public interface LanguageListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitLessThanOrEqualExpr(LanguageParser.LessThanOrEqualExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code logicalAndExpr}
+	 * labeled alternative in {@link LanguageParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterLogicalAndExpr(LanguageParser.LogicalAndExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code logicalAndExpr}
+	 * labeled alternative in {@link LanguageParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitLogicalAndExpr(LanguageParser.LogicalAndExprContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code additionExpr}
 	 * labeled alternative in {@link LanguageParser#expr}.
@@ -400,6 +422,18 @@ public interface LanguageListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitGreaterThanExpr(LanguageParser.GreaterThanExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code logicalOrExpr}
+	 * labeled alternative in {@link LanguageParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterLogicalOrExpr(LanguageParser.LogicalOrExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code logicalOrExpr}
+	 * labeled alternative in {@link LanguageParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitLogicalOrExpr(LanguageParser.LogicalOrExprContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code notExpr}
 	 * labeled alternative in {@link LanguageParser#expr}.

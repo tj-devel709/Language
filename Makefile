@@ -9,7 +9,7 @@ ANTLRJAR=antlr/antlr-4.9.2-complete.jar
 ANTLR=java -jar $(ANTLRJAR)
 CLASSPATH=.:$(ANTLRJAR)
 
-GRAMMAR=Language.g4
+GRAMMAR=TJ.g4
 
 CSOUTDIR=CSParser
 JAVAOUTDIR=JavaParser
@@ -37,6 +37,9 @@ cs: grammar $(CSOUTDIR) $(CSFINALOUTPUT)
 	$(ANTLR) -Dlanguage=CSharp -o $(CSOUTDIR) $(GRAMMAR)
 	cp $(CSOUTDIR)/*.cs $(CSFINALOUTPUT)
 
+tests: $(EXAMPLES) $(ANTLRJAR)
+	cd JavaParser && $(MAKE)
+
 $(JAVAOUTDIR):
 	mkdir $@
 
@@ -47,7 +50,7 @@ $(CSFINALOUTPUT):
 	mkdir -p $@
 
 clean:
-	rm -rf *.tokens *.interp $(JAVAOUTDIR) $(CSOUTDIR) $(CSFINALOUTPUT)/*.cs
+	rm -rf *.tokens *.interp $(JAVAOUTDIR)/*.tokens $(JAVAOUTDIR)/*.class $(JAVAOUTDIR)/*.interp $(JAVAOUTDIR)/*.java $(CSOUTDIR) $(CSFINALOUTPUT)/*.cs
 
 squeakyclean: clean
 	rm -rf antlr

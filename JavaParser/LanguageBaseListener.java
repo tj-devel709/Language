@@ -123,25 +123,25 @@ public class LanguageBaseListener implements LanguageListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVarAssignStatement(LanguageParser.VarAssignStatementContext ctx) { }
+	@Override public void enterVarDeclarationListStatement(LanguageParser.VarDeclarationListStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVarAssignStatement(LanguageParser.VarAssignStatementContext ctx) { }
+	@Override public void exitVarDeclarationListStatement(LanguageParser.VarDeclarationListStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVarDeclStatement(LanguageParser.VarDeclStatementContext ctx) { }
+	@Override public void enterVarAssignmentStatement(LanguageParser.VarAssignmentStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVarDeclStatement(LanguageParser.VarDeclStatementContext ctx) { }
+	@Override public void exitVarAssignmentStatement(LanguageParser.VarAssignmentStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -279,13 +279,13 @@ public class LanguageBaseListener implements LanguageListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVariableDeclaration(LanguageParser.VariableDeclarationContext ctx) { }
+	@Override public void enterVariableDeclarationList(LanguageParser.VariableDeclarationListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVariableDeclaration(LanguageParser.VariableDeclarationContext ctx) { }
+	@Override public void exitVariableDeclarationList(LanguageParser.VariableDeclarationListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -298,6 +298,18 @@ public class LanguageBaseListener implements LanguageListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitVariableAssignment(LanguageParser.VariableAssignmentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVariable(LanguageParser.VariableContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVariable(LanguageParser.VariableContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -334,6 +346,18 @@ public class LanguageBaseListener implements LanguageListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitLessThanOrEqualExpr(LanguageParser.LessThanOrEqualExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLogicalAndExpr(LanguageParser.LogicalAndExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLogicalAndExpr(LanguageParser.LogicalAndExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -442,6 +466,18 @@ public class LanguageBaseListener implements LanguageListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitGreaterThanExpr(LanguageParser.GreaterThanExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLogicalOrExpr(LanguageParser.LogicalOrExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLogicalOrExpr(LanguageParser.LogicalOrExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
